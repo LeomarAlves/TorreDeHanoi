@@ -10,3 +10,4 @@ void inicializarHastes(int n, stack<int>& a, stack<int>& b, stack<int>& c){
     }
     
 }
+
