@@ -1,6 +1,7 @@
 #include "../include/hanoi.h"
 #include <iostream>
 #include <stack>
+#include <string>
 
 using namespace std;
 
@@ -27,7 +28,8 @@ void resolverHanoi(int n, stack<int>& origem, stack<int>& destino, stack<int>& a
     resolverHanoi(n - 1, auxiliar, destino, origem, nomeAuxiliar, nomeDestino, nomeOrigem, contador);
 }
 
-void imprimirPilha(char nome, stack<int> p){
+string imprimirPilha(char nome, stack<int> p){
+    string texto = "";
     stack<int> temp;
 
     while(!p.empty()){
@@ -35,22 +37,24 @@ void imprimirPilha(char nome, stack<int> p){
         p.pop();
     }
 
-    cout << nome << ": [";
+    texto += nome;
+    texto += ": [";
 
     while (!temp.empty()){
-        cout << temp.top();
+        texto += to_string(temp.top());
         if(temp.size() > 1){
-            cout << ", ";
+            texto += ", ";
         }
         temp.pop();
     }
     
-    cout << "]"; 
+    texto += "]"; 
+
+    return texto;
 }
 
-void imprimirEstado(stack<int> a, stack<int> b, stack<int> c){
-    imprimirPilha('A', a);
-    imprimirPilha('B', b);
-    imprimirPilha('C', c);
-    cout << endl;
+void imprimirEstado(stack<int> a, stack<int> b, stack<int> c) {
+    cout << imprimirPilha('A', a) << " ";
+    cout << imprimirPilha('B', b) << " ";
+    cout << imprimirPilha('C', c) << endl;
 }
