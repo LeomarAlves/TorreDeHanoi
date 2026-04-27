@@ -6,10 +6,10 @@
 using namespace std;
 
 int main(){
-    stack<int> hasteA, hasteB, hasteC;
-    int n = 5;
+    
     hanoi meuJogo;
     meuJogo.contador = 0;
+    int n = 5;
 
     inicializarHastes(n, meuJogo.hasteA, meuJogo.hasteB, meuJogo.hasteC);
 
