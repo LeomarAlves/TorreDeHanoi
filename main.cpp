@@ -13,7 +13,7 @@ int main(){
 
     do
     {
-        cout << "Informe o número de discos do quebra-cabeça (min: 1. max: 10): ";
+        cout << "Informe o número de discos do quebra-cabeça (min: 1 e max: 10): ";
         cin >> n;
     } while (n < 1 || n > 10);
     
